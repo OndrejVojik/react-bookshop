@@ -8,12 +8,18 @@ import MainContent from './MainContent'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [page, setPage] = useState('')
 
   return (
     <div className="app">
-      <Header />
+      <Header 
+      setPage = {setPage}
+      page = {page}
+      />
 
-      <MainContent />
+      <MainContent 
+      page = {page}
+      />
 
       <Footer />
     </div>
