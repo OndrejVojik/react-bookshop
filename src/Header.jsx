@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './Header.scss'
 import TopMenu from './TopMenu'
+import CurrencySelection from './CurrencySelection'
 
 export default function Header({setPage, page}){
 
@@ -10,9 +11,8 @@ export default function Header({setPage, page}){
     <header className="header">
       <div className="header__sitename">Flourish and Blotts</div>
 
-      <div>
-        Last menu item clicked: { testValue }
-      </div>
+
+    <CurrencySelection/>
     
     <TopMenu 
     currentItem = { page }

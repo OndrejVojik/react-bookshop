@@ -1,0 +1,12 @@
+.latest-books{
+
+    &__book{
+        display: flex;
+    }
+
+    &__image{
+        img{
+            width: 5em;
+        }
+    }
+}
