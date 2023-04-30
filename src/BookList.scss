@@ -2,11 +2,31 @@
 
     &__book{
         display: flex;
+        padding: 0.5em;
+
+        &:nth-child(odd){
+            background-color: #e7e7e7;
+        }
     }
 
     &__image{
+        margin-right: 1em;
         img{
-            width: 5em;
+            width: 4em;
+        }
+    }
+
+    &__book-title{
+        margin: 0 0 0.5rem;
+    }
+
+    &__book-description{
+        margin-top: 0.5em;
+        font-size: 0.875em;
+        color: #444;
+
+        p{
+            margin: 0 0 0.5em;
         }
     }
 }

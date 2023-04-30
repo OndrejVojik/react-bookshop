@@ -41,6 +41,11 @@ export default function BookList() {
               </div>
               <div className="latest-books__info">
                 <h4 className="latest-books__book-title">{book.title}</h4>
+                <div className="latest-books__book-price">&euro;{ book.price }</div>
+                <div 
+                className="latest-books__book-description" 
+                dangerouslySetInnerHTML={{__html: book.description}}>
+                </div>
               </div>
             </div>
           ))}
