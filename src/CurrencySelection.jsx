@@ -1,12 +1,21 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import CurrencyContext from './CurrencyContext'
+import Context from './Context';
 
 export default function CurrencySelection() {
 
-    const [currency, setCurrency] = useState(localStorage.getItem('currency') || 'EUR')
-    const [exchangeRate, setExchangeRate] = useState(1)
+    const { context: {currency, exchangeRate}, dispatch } = useContext(Context);
+
+    // const {currency, setCurrency} = useContext(CurrencyContext);
+    // const {exchangeRate, setExchangeRate} = useContext(CurrencyContext);
+
 
     const handleSelect = (event) => {
-        setCurrency(event.target.value);
+        // setCurrency(event.target.value);
+        dispatch({
+          type: 'currency/set',
+          payload: event.target.value
+        })
     }
 
     const loadExchangeRate = async () => {
@@ -19,7 +28,11 @@ export default function CurrencySelection() {
             return rate.currency === currency;
         });
 
-        setExchangeRate(exchange_rate.rate);
+        // setExchangeRate(exchange_rate.rate);
+        dispatch({
+          type: "exchangeRate/set",
+          payload: exchange_rate.rate
+        });
     }
 
     useEffect(() => {

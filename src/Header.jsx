@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './Header.scss'
 import TopMenu from './TopMenu'
 import CurrencySelection from './CurrencySelection'
+import CartOverview from './CartOverview'
 
 export default function Header({setPage, page}){
 
@@ -13,6 +14,8 @@ export default function Header({setPage, page}){
 
 
     <CurrencySelection/>
+
+    <CartOverview />
     
     <TopMenu 
     currentItem = { page }

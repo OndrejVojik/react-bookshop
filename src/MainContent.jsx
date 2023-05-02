@@ -1,7 +1,11 @@
 import './MainContent.scss'
 import Homepage from './Homepage'
+import Context from './Context';
+import { useContext } from 'react';
 
 export default function MainContent({page}) {
+
+  const {context: {theme}} = useContext(Context);
 
     let content = '';
 
@@ -22,7 +26,7 @@ export default function MainContent({page}) {
     }
 
     return (
-        <main className="main">
+        <main className={`main main--${theme}`}>
             <h1 className="app__headline">Flourish and Blotts</h1>
             {content}
         </main>
